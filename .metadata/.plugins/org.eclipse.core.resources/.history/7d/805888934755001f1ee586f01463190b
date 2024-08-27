@@ -1,0 +1,51 @@
+$(document).ready(function() {
+    $('#productForm').on('submit', function(e) {
+        e.preventDefault(); // Prevent the form from submitting the default way
+
+        // Gather form data
+        var formData = {
+            name: $('#name').val(),
+            price: $('#price').val()
+        };
+
+        // Send AJAX request
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8080/insertid', // Replace with your server URL
+            data: JSON.stringify(formData),
+            contentType: 'application/json',
+            success: function(response) {
+                alert("Saved successfully");
+            },
+            error: function(xhr, status, error) {
+                $('#responseMessage').text('An error occurred: ' + error).css('color', 'red');
+            }
+        });
+    });
+	$('#productFormdelete').on('submit', function(e) {
+	        e.preventDefault(); // Prevent the form from submitting the default way
+
+	        // Gather form data
+	        var formData = {
+	            id: $('#id').val(),
+	            
+	        };
+
+	        // Send AJAX request
+	        $.ajax({
+	            type: 'DELETE',
+	            url: 'http://localhost:8080/delete', // Replace with your server URL
+	            data: JSON.stringify(formData),
+	            contentType: 'application/json',
+	            success: function(response) {
+	                alert("Deleted successfully");
+	            },
+	            error: function(xhr, status, error) {
+	                $('#responseMessage').text('An error occurred: ' + error).css('color', 'red');
+	            }
+	        });
+	    });
+});
+
+
+

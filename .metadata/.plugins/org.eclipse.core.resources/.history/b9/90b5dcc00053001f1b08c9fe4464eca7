@@ -1,0 +1,13 @@
+package com.example.demo;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+@component
+public class Dev {
+
+	public void demo() {
+		System.out.println("Lets Do it");
+	}
+}

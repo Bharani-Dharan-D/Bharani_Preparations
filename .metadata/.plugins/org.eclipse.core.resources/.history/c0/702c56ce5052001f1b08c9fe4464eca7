@@ -1,0 +1,52 @@
+package com.example.demo;
+
+import java.util.*;
+
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+@Controller
+public class ProductController {
+
+	@Autowired
+	private ProductService service;
+
+	// RESTful API methods for Retrieval operations
+
+	// RESTful API method for Create operation
+
+	// RESTful API method for Update operation
+
+	// RESTful API method for Delete operation
+	
+	@GetMapping("/display")
+	public String hello() {
+		return "index";
+	}
+	@GetMapping("/products")
+	public List<Product> list() {
+		return service.listAll();
+	}
+	@GetMapping("/productsbyid/{id}")
+	public Product findbyid(@PathVariable int id) {
+		return service.get(id);
+	}
+	@DeleteMapping("/deleteid/{id}")
+	public void delete(@PathVariable Integer id) {
+	    service.delete(id);
+	}
+	@PostMapping("/insertid")
+	public String insert(@RequestBody Product prod) {
+	    service.save(prod);
+	}
+	
+	@RequestMapping("/Screen")
+
+	public String name() {
+		return "Hi";
+
+	}
+
+}

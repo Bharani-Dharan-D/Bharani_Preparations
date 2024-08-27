@@ -1,0 +1,93 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Boxes Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Include external JavaScript file -->
+    <script src="sample.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="submit"] {
+            width: auto;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mobile Price List</h1>
+        <form id="productForm" action="#" method="post">
+            <div class="form-group">
+                <label for="name">Model Name:</label>
+                <input type="text" id="name" name="model_name">
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+			
+        </form>
+        <div id="responseMessage"></div> <!-- Added a div to show error messages -->
+    </div>
+	<form id="productForm" action="Delete" method="post">
+		            
+		            <div class="form-group">
+		                <input type="submit" value="Delete">
+		            </div>
+	
+	
+	
+	<div class="container">
+	        <h1>Data Management</h1>
+	        <table id="data-table">
+	            <thead>
+	                <tr>
+	                    <th>ID</th>
+	                    <th>Model Name</th>
+	                    <th>Price</th>
+	                    <th>Actions</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <!-- Data will be inserted here dynamically -->
+	            </tbody>
+	        </table>
+	    </div>
+</body>
+</html>
